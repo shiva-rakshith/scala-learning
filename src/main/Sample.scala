@@ -1,25 +1,16 @@
-import scala.collection.mutable._
-
 object Sample {
   def main(args : Array[String]): Unit ={
 
-    val list : ListBuffer[Int] = ListBuffer(1,2,3,4,5,6,7,8,9,10)
+    val list1 = List(1,2,3,4,5)
 
-    list += 11
-    println("After adding new number 11: "+list)
+    val list2 = list1 :+ 6
+    println("After adding a number: " + list2)
 
-    list -= 1
-    println("After removing number 1: "+list)
+    val list3 = list2.filter(_ != 2)
+    println("After removing a number: " + list3)
 
-    val evenList = list.filter(_%2 == 0)
+    val evenList = list3.filter(_%2 == 0)
     println("Even number from list: "+evenList)
-
-    println("Displaying modified list: "+ list.map{x => x*5})
-
-    val numbers = List(1,2,3,4)
-    val chars = List('a', 'b', 'c', 'd')
-    val combinations = numbers.flatMap(n => chars.map(c => "" + c + n))
-    println(combinations)
 
   }
 }
